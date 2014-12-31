@@ -39,10 +39,15 @@ Partial Class Form1
         Me.pnlContain = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.lbUserName = New System.Windows.Forms.Label()
+        Me.lbUserNumber = New System.Windows.Forms.Label()
+        Me.lbCanDo = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.pnlContain.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'wbOperator
@@ -61,7 +66,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.lbStatus)
         Me.GroupBox1.Enabled = False
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 109)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 201)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(223, 129)
         Me.GroupBox1.TabIndex = 1
@@ -123,7 +128,7 @@ Partial Class Form1
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(6, 66)
+        Me.LinkLabel1.Location = New System.Drawing.Point(6, 76)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(125, 12)
         Me.LinkLabel1.TabIndex = 3
@@ -134,7 +139,7 @@ Partial Class Form1
         '
         Me.GroupBox2.Controls.Add(Me.rbRnd)
         Me.GroupBox2.Controls.Add(Me.rbNormal)
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 244)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 336)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(223, 99)
         Me.GroupBox2.TabIndex = 4
@@ -166,7 +171,7 @@ Partial Class Form1
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(137, 66)
+        Me.LinkLabel2.Location = New System.Drawing.Point(137, 76)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(29, 12)
         Me.LinkLabel2.TabIndex = 5
@@ -176,6 +181,7 @@ Partial Class Form1
         'pnlContain
         '
         Me.pnlContain.AutoScroll = True
+        Me.pnlContain.Controls.Add(Me.GroupBox4)
         Me.pnlContain.Controls.Add(Me.GroupBox3)
         Me.pnlContain.Controls.Add(Me.GroupBox2)
         Me.pnlContain.Controls.Add(Me.GroupBox1)
@@ -205,6 +211,45 @@ Partial Class Form1
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "操作说明：" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "1.登录进入教务系统" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "2.选择""教学质量评价"" 的第一个课程" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "3.点击""开始自动评教"""
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.lbCanDo)
+        Me.GroupBox4.Controls.Add(Me.lbUserNumber)
+        Me.GroupBox4.Controls.Add(Me.lbUserName)
+        Me.GroupBox4.Location = New System.Drawing.Point(3, 109)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(223, 86)
+        Me.GroupBox4.TabIndex = 5
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "登录信息"
+        '
+        'lbUserName
+        '
+        Me.lbUserName.AutoSize = True
+        Me.lbUserName.Location = New System.Drawing.Point(9, 17)
+        Me.lbUserName.Name = "lbUserName"
+        Me.lbUserName.Size = New System.Drawing.Size(29, 12)
+        Me.lbUserName.TabIndex = 0
+        Me.lbUserName.Text = "姓名"
+        '
+        'lbUserNumber
+        '
+        Me.lbUserNumber.AutoSize = True
+        Me.lbUserNumber.Location = New System.Drawing.Point(9, 39)
+        Me.lbUserNumber.Name = "lbUserNumber"
+        Me.lbUserNumber.Size = New System.Drawing.Size(29, 12)
+        Me.lbUserNumber.TabIndex = 1
+        Me.lbUserNumber.Text = "学号"
+        '
+        'lbCanDo
+        '
+        Me.lbCanDo.AutoSize = True
+        Me.lbCanDo.Location = New System.Drawing.Point(9, 62)
+        Me.lbCanDo.Name = "lbCanDo"
+        Me.lbCanDo.Size = New System.Drawing.Size(29, 12)
+        Me.lbCanDo.TabIndex = 2
+        Me.lbCanDo.Text = "状态"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -222,6 +267,8 @@ Partial Class Form1
         Me.pnlContain.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -241,5 +288,9 @@ Partial Class Form1
     Friend WithEvents pnlContain As System.Windows.Forms.Panel
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents lbCanDo As System.Windows.Forms.Label
+    Friend WithEvents lbUserNumber As System.Windows.Forms.Label
+    Friend WithEvents lbUserName As System.Windows.Forms.Label
 
 End Class

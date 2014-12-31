@@ -1,44 +1,54 @@
 ﻿Imports System.Text.RegularExpressions
 Public Class Form1
-    Public fullName As String = Application.ProductName & " - " & Application.ProductVersion
     Dim opStep As Integer = 0
     Public actionStarted As Boolean = False
     Dim r As New Random
+    Public userName As String
+    Public userNumber As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnlContain.Top = 0
         pnlContain.Left = 0
         wbOperator.Navigate("http://jw.bwgl.cn")
         wbOperator.Left = pnlContain.Width
         wbOperator.Top = 0
-        Me.Text = fullName & " /未登录"
+        Me.Text = Application.ProductName & " - " & Application.ProductVersion
     End Sub
 
     Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbOperator.DocumentCompleted
         If getRightText(wbOperator).Contains("欢迎您") Then
-            Me.Text = fullName & "/登录成功 - 但是没有进入评教页面 - " & getName()
-
+            getUserInfo(True, False)
             Dim auth As HtmlDocument = wbOperator.Document.Window.Frames("iframeautoheight").Document
             Try
                 If auth.Body.InnerText.Contains("评价课程名称") Then
-                    Me.Text = fullName & "/登录成功 - 可以开始自动评教 - " & getName()
-                    GroupBox1.Enabled = True
+                    getUserInfo(True, True)
                 End If
             Catch ex As Exception
             End Try
         Else
-            GroupBox1.Enabled = False
-            Me.Text = fullName & "/未登录"
-            'MsgBox("操作出现问题！刷评教中途请勿点击页面的其他位置！")
+            getUserInfo(False, False)
             Exit Sub
         End If
 
     End Sub
 
-    Private Function getName()
-        Return Regex.Replace(wbOperator.Document.GetElementById("xhxm").InnerText, "\d", "", RegexOptions.IgnoreCase).Trim().Replace("同学", "")
-    End Function
-
-
+    Private Sub getUserInfo(ByVal loginStatus As Boolean, ByVal canDo As Boolean)
+        If loginStatus = True Then
+            userName = (Regex.Replace(wbOperator.Document.GetElementById("xhxm").InnerText, "\d", "", RegexOptions.IgnoreCase).Trim().Replace("同学", ""))
+            userNumber = wbOperator.Document.GetElementById("xhxm").InnerText.Replace("同学", "").Replace(userName, "")
+            lbUserName.Text = "姓名：" & userName
+            lbUserNumber.Text = "学号：" & userNumber
+            If canDo = True Then
+                lbCanDo.Text = "可以开始自动评教"
+            Else
+                lbCanDo.Text = "已登录但是未进入评教页面"
+            End If
+        Else
+            lbUserName.Text = "姓名：（未登录）"
+            lbUserNumber.Text = "学号：（未登录）"
+            lbCanDo.Text = "（未登录）"
+        End If
+        GroupBox1.Enabled = canDo
+    End Sub
 
     Public Function getRightText(ByVal wb As WebBrowser) As String
         Dim reader As New System.IO.StreamReader(wb.DocumentStream, System.Text.Encoding.GetEncoding(wb.Document.Encoding))
@@ -51,7 +61,6 @@ Public Class Form1
         tmrTicker.Enabled = True
         'performAction()
         'actionStarted = True
-
     End Sub
 
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles Me.Resize
