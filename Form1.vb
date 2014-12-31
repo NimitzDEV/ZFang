@@ -5,10 +5,11 @@ Public Class Form1
     Public actionStarted As Boolean = False
     Dim r As New Random
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pnlContain.Top = 0
+        pnlContain.Left = 0
         wbOperator.Navigate("http://jw.bwgl.cn")
-        wbOperator.Left = 0
-        GroupBox1.Top = 0
-        wbOperator.Top = GroupBox1.Height
+        wbOperator.Left = pnlContain.Width
+        wbOperator.Top = 0
         Me.Text = fullName & " /未登录"
     End Sub
 
@@ -54,8 +55,9 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        wbOperator.Height = Me.ClientRectangle.Height - GroupBox1.Height
-        wbOperator.Width = Me.ClientRectangle.Width
+        pnlContain.Height = Me.ClientRectangle.Height
+        wbOperator.Height = Me.ClientRectangle.Height
+        wbOperator.Width = Me.ClientRectangle.Width - pnlContain.Width
 
     End Sub
 
@@ -108,7 +110,6 @@ Public Class Form1
             End If
         End If
         If rbRnd.Checked = True Then
-
             Dim a As Integer
             a = r.Next(2)
             Debug.Print(a)

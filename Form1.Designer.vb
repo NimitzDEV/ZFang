@@ -30,36 +30,40 @@ Partial Class Form1
         Me.lbStatus = New System.Windows.Forms.Label()
         Me.btnStop = New System.Windows.Forms.Button()
         Me.btnAction = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.tmrTicker = New System.Windows.Forms.Timer(Me.components)
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.rbRnd = New System.Windows.Forms.RadioButton()
         Me.rbNormal = New System.Windows.Forms.RadioButton()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.pnlContain = New System.Windows.Forms.Panel()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.pnlContain.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'wbOperator
         '
-        Me.wbOperator.Location = New System.Drawing.Point(12, 167)
+        Me.wbOperator.Location = New System.Drawing.Point(250, 67)
         Me.wbOperator.MinimumSize = New System.Drawing.Size(20, 20)
         Me.wbOperator.Name = "wbOperator"
-        Me.wbOperator.Size = New System.Drawing.Size(459, 82)
+        Me.wbOperator.Size = New System.Drawing.Size(459, 201)
         Me.wbOperator.TabIndex = 0
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnStop)
+        Me.GroupBox1.Controls.Add(Me.btnAction)
         Me.GroupBox1.Controls.Add(Me.lbNext)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.lbStatus)
-        Me.GroupBox1.Controls.Add(Me.btnStop)
-        Me.GroupBox1.Controls.Add(Me.btnAction)
         Me.GroupBox1.Enabled = False
-        Me.GroupBox1.Location = New System.Drawing.Point(231, 0)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 109)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(372, 99)
+        Me.GroupBox1.Size = New System.Drawing.Size(223, 129)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "操作区"
@@ -67,7 +71,7 @@ Partial Class Form1
         'lbNext
         '
         Me.lbNext.AutoSize = True
-        Me.lbNext.Location = New System.Drawing.Point(6, 84)
+        Me.lbNext.Location = New System.Drawing.Point(4, 114)
         Me.lbNext.Name = "lbNext"
         Me.lbNext.Size = New System.Drawing.Size(35, 12)
         Me.lbNext.TabIndex = 4
@@ -78,16 +82,16 @@ Partial Class Form1
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(105, 17)
+        Me.Label2.Location = New System.Drawing.Point(4, 43)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(213, 48)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "自动评教过程中那你可以后台本程序" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "但是不要点击本程序内的页面" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "以免发生元素检测错误~" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "所有课程评教完之后将会自动提交"
+        Me.Label2.Text = "自动评教过程中你可以最小化本程序" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "但是不要点击右边的内容" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "以免发生元素检测错误~" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "所有课程评教完之后将会自动提交"
         '
         'lbStatus
         '
         Me.lbStatus.AutoSize = True
-        Me.lbStatus.Location = New System.Drawing.Point(6, 72)
+        Me.lbStatus.Location = New System.Drawing.Point(4, 102)
         Me.lbStatus.Name = "lbStatus"
         Me.lbStatus.Size = New System.Drawing.Size(35, 12)
         Me.lbStatus.TabIndex = 2
@@ -96,7 +100,7 @@ Partial Class Form1
         'btnStop
         '
         Me.btnStop.Enabled = False
-        Me.btnStop.Location = New System.Drawing.Point(3, 46)
+        Me.btnStop.Location = New System.Drawing.Point(113, 17)
         Me.btnStop.Name = "btnStop"
         Me.btnStop.Size = New System.Drawing.Size(96, 23)
         Me.btnStop.TabIndex = 1
@@ -105,21 +109,12 @@ Partial Class Form1
         '
         'btnAction
         '
-        Me.btnAction.Location = New System.Drawing.Point(3, 17)
+        Me.btnAction.Location = New System.Drawing.Point(6, 17)
         Me.btnAction.Name = "btnAction"
         Me.btnAction.Size = New System.Drawing.Size(96, 23)
         Me.btnAction.TabIndex = 0
         Me.btnAction.Text = "开始自动评教"
         Me.btnAction.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(10, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(203, 48)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "操作说明：" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "1.登录进入教务系统" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "2.选择""教学质量评价"" 的第一个课程" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "3.点击""开始评教"""
         '
         'tmrTicker
         '
@@ -128,7 +123,7 @@ Partial Class Form1
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(10, 72)
+        Me.LinkLabel1.Location = New System.Drawing.Point(6, 66)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(125, 12)
         Me.LinkLabel1.TabIndex = 3
@@ -139,9 +134,9 @@ Partial Class Form1
         '
         Me.GroupBox2.Controls.Add(Me.rbRnd)
         Me.GroupBox2.Controls.Add(Me.rbNormal)
-        Me.GroupBox2.Location = New System.Drawing.Point(609, 0)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 244)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(200, 99)
+        Me.GroupBox2.Size = New System.Drawing.Size(223, 99)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "评教模式"
@@ -171,23 +166,51 @@ Partial Class Form1
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(171, 72)
+        Me.LinkLabel2.Location = New System.Drawing.Point(137, 66)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(29, 12)
         Me.LinkLabel2.TabIndex = 5
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "知乎"
         '
+        'pnlContain
+        '
+        Me.pnlContain.AutoScroll = True
+        Me.pnlContain.Controls.Add(Me.GroupBox3)
+        Me.pnlContain.Controls.Add(Me.GroupBox2)
+        Me.pnlContain.Controls.Add(Me.GroupBox1)
+        Me.pnlContain.Location = New System.Drawing.Point(0, 0)
+        Me.pnlContain.Name = "pnlContain"
+        Me.pnlContain.Size = New System.Drawing.Size(234, 507)
+        Me.pnlContain.TabIndex = 5
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label1)
+        Me.GroupBox3.Controls.Add(Me.LinkLabel2)
+        Me.GroupBox3.Controls.Add(Me.LinkLabel1)
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(223, 100)
+        Me.GroupBox3.TabIndex = 0
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "操作说明"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 18)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(203, 48)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "操作说明：" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "1.登录进入教务系统" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "2.选择""教学质量评价"" 的第一个课程" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "3.点击""开始自动评教"""
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(896, 429)
-        Me.Controls.Add(Me.LinkLabel2)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.LinkLabel1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(896, 554)
+        Me.Controls.Add(Me.pnlContain)
         Me.Controls.Add(Me.wbOperator)
         Me.Name = "Form1"
         Me.Text = "Form1"
@@ -196,14 +219,15 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.pnlContain.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents wbOperator As System.Windows.Forms.WebBrowser
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents btnAction As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents tmrTicker As System.Windows.Forms.Timer
     Friend WithEvents btnStop As System.Windows.Forms.Button
     Friend WithEvents lbStatus As System.Windows.Forms.Label
@@ -214,5 +238,8 @@ Partial Class Form1
     Friend WithEvents rbRnd As System.Windows.Forms.RadioButton
     Friend WithEvents rbNormal As System.Windows.Forms.RadioButton
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
+    Friend WithEvents pnlContain As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class
