@@ -81,7 +81,7 @@ Public Class Form1
             Dim b As HtmlElementCollection = a.GetElementsByTagName("select")
             Dim authSubmit As HtmlElement = a.GetElementById("Button2")
             For Each c As HtmlElement In b
-                If c.InnerText.Contains("不合格") Then
+                If c.InnerText.Contains("不及格") Then
                     counter += 1
                     'If counter = 1 Then
                     c.SetAttribute("value", getValue(counter))
