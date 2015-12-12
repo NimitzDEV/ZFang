@@ -6,12 +6,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2C69FD02-D4C1-4006-9A1A-C97BC9858EC8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>正方评教半自动挂.My.MyApplication</StartupObject>
-    <RootNamespace>正方评教半自动挂</RootNamespace>
-    <AssemblyName>正方评教半自动挂</AssemblyName>
+    <StartupObject>正方评教全自动挂.My.MyApplication</StartupObject>
+    <RootNamespace>正方评教全自动挂</RootNamespace>
+    <AssemblyName>正方评教全自动挂</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -21,7 +21,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>正方评教半自动挂.xml</DocumentationFile>
+    <DocumentationFile>正方评教全自动挂.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -31,7 +31,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>正方评教半自动挂.xml</DocumentationFile>
+    <DocumentationFile>正方评教全自动挂.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -80,6 +80,13 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmSetUserName.Designer.vb">
+      <DependentUpon>frmSetUserName.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetUserName.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdProgram.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,6 +106,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetUserName.resx">
+      <DependentUpon>frmSetUserName.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

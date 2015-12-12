@@ -11,14 +11,14 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("正方评教全自动")> 
 <Assembly: AssemblyDescription("正方评教全自动")> 
 <Assembly: AssemblyCompany("NimitzDEV")> 
-<Assembly: AssemblyProduct("正方评教全自动")> 
-<Assembly: AssemblyCopyright("Copyright ©  2014")> 
+<Assembly: AssemblyProduct("正方评教全自动")>
+<Assembly: AssemblyCopyright("Copyright ©  2015")>
 <Assembly: AssemblyTrademark("NimitzDEV")> 
 
 <Assembly: ComVisible(False)>
 
 '如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-<Assembly: Guid("c927bb40-bd69-4683-b19a-1e41063b1c3e")> 
+<Assembly: Guid("c927bb40-bd69-4683-b19a-1e41063b1c3e")>
 
 ' 程序集的版本信息由下面四个值组成: 
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 方法是按如下所示使用“*”: 
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.2.0.1")> 
-<Assembly: AssemblyFileVersion("0.2.0.1")> 
+<Assembly: AssemblyVersion("0.5.2.29")>
+<Assembly: AssemblyFileVersion("0.5.2.29")>
