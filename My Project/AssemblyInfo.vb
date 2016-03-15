@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("正方评教全自动")> 
 <Assembly: AssemblyCompany("NimitzDEV")> 
 <Assembly: AssemblyProduct("正方评教全自动")>
-<Assembly: AssemblyCopyright("Copyright ©  2015")>
+<Assembly: AssemblyCopyright("Copyright ©  2015 - 2017")>
 <Assembly: AssemblyTrademark("NimitzDEV")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 方法是按如下所示使用“*”: 
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.5.2.29")>
-<Assembly: AssemblyFileVersion("0.5.2.29")>
+<Assembly: AssemblyVersion("0.8.1.1")>
+<Assembly: AssemblyFileVersion("0.8.1.1")>

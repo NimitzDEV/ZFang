@@ -24,7 +24,7 @@ Partial Class frmSetUserName
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lbTips = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -40,32 +40,32 @@ Partial Class frmSetUserName
         Me.Label1.BackColor = System.Drawing.Color.DodgerBlue
         Me.Label1.Font = New System.Drawing.Font("微软雅黑", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(105, 29)
+        Me.Label1.Location = New System.Drawing.Point(73, 27)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(160, 46)
+        Me.Label1.Size = New System.Drawing.Size(230, 46)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "一键登录"
+        Me.Label1.Text = "一键登录教务"
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.DodgerBlue
-        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.lbTips)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(380, 126)
         Me.Panel1.TabIndex = 1
         '
-        'Label2
+        'lbTips
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("宋体", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(12, 105)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(325, 10)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "*使用此功能，可以在下次评教的时候进行自动登陆~ 免去再手打的麻烦~"
+        Me.lbTips.AutoSize = True
+        Me.lbTips.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.lbTips.ForeColor = System.Drawing.Color.White
+        Me.lbTips.Location = New System.Drawing.Point(43, 90)
+        Me.lbTips.Name = "lbTips"
+        Me.lbTips.Size = New System.Drawing.Size(281, 24)
+        Me.lbTips.TabIndex = 2
+        Me.lbTips.Text = "*使用此功能，可以在下次评教的时候进行自动登陆~" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " 免去再手打的麻烦~"
         '
         'btnSave
         '
@@ -105,14 +105,14 @@ Partial Class frmSetUserName
         '
         Me.tbUserName.Location = New System.Drawing.Point(94, 157)
         Me.tbUserName.Name = "tbUserName"
-        Me.tbUserName.Size = New System.Drawing.Size(243, 21)
+        Me.tbUserName.Size = New System.Drawing.Size(224, 21)
         Me.tbUserName.TabIndex = 5
         '
         'tbUserPass
         '
         Me.tbUserPass.Location = New System.Drawing.Point(94, 195)
         Me.tbUserPass.Name = "tbUserPass"
-        Me.tbUserPass.Size = New System.Drawing.Size(243, 21)
+        Me.tbUserPass.Size = New System.Drawing.Size(224, 21)
         Me.tbUserPass.TabIndex = 7
         '
         'Label4
@@ -151,7 +151,7 @@ Partial Class frmSetUserName
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label2 As Label
+    Friend WithEvents lbTips As Label
     Friend WithEvents btnSave As Button
     Friend WithEvents btnCancel As Button
     Friend WithEvents Label3 As Label

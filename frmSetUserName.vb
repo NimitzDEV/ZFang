@@ -4,17 +4,36 @@
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        dfUserName = tbUserName.Text.Trim
-        dfUserPass = tbUserPass.Text.Trim
+        AccountProvider.SetUserName(tbUserName.Text.Trim)
+        AccountProvider.SetUserPass(tbUserPass.Text.Trim)
         Me.Close()
     End Sub
 
     Private Sub frmSetUserName_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        tbUserName.Text = AccountProvider.GetUserName
+        tbUserPass.Text = AccountProvider.GetUserPass
+        If tbUserName.TextLength = 8 Then
+            tbUserName.Select(6, 2)
+        End If
+
+        If AccountProvider.isOtMode Then
+            btnCancel.Visible = False
+            lbTips.Visible = False
+            Me.Text = "输入他人教务账号进行登陆"
+        End If
         tbUserName.Focus()
     End Sub
 
     Private Sub tbUserName_TextChanged(sender As Object, e As EventArgs) Handles tbUserName.TextChanged
+        If tbUserName.TextLength = 8 Then tbUserPass.Focus()
         validText()
+    End Sub
+
+    Private Sub tbUserPass_KeyDown(sender As Object, e As KeyEventArgs) Handles tbUserPass.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            btnSave.PerformClick()
+        End If
     End Sub
 
     Private Sub tbUserPass_TextChanged(sender As Object, e As EventArgs) Handles tbUserPass.TextChanged
