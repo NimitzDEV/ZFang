@@ -14,13 +14,8 @@
     Public normalFinal As Double = 0
     Public specFinal As Double = 0
 
-    Private Sub FormSkin1_Click(sender As Object, e As EventArgs) Handles FormSkin1.Click
-
-    End Sub
-
-    Private Sub frmAvgCalc_Load(sender As Object, e As EventArgs) Handles Me.Load
-
-    End Sub
+    Public levelDict() As String = {"优秀", "良好", "中等", "合格", "及格", "不及格", "不合格"}
+    Public levelValue() As Integer = {95, 85, 75, 65, 65, 40, 40}
 
     Private Sub FlatButton2_Click(sender As Object, e As EventArgs) Handles FlatButton2.Click
         lbStatus.Text = "正在运行，请稍等..."
@@ -105,24 +100,11 @@
     End Sub
 
     Private Function txtTable(ByVal cat As String) As Integer
-        Select Case cat
-            Case "优秀"
-                Return 95
-            Case "良好"
-                Return 85
-            Case "中等"
-                Return 75
-            Case "合格"
-                Return 65
-            Case "及格"
-                Return 65
-            Case "不合格"
-                Return 40
-            Case "不及格"
-                Return 40
-            Case Else
-                Return cat
-        End Select
-
+        For i = 0 To levelDict.Count - 1
+            If cat.Contains(levelDict(i)) Then
+                Return levelValue(i)
+            End If
+        Next
+        Return cat
     End Function
 End Class
